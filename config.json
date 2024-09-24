@@ -1,0 +1,36 @@
+{
+    "numLinks": 10,
+    "numFetchWorkers": 5,
+    "numProcessWorkers": 3,
+    "maxRetries": 3,
+    "rateLimit": 1.0,
+    "burstLimit": 5,
+    "categories": [
+      {
+        "id": "entityDetails",
+        "name": "entity",
+        "path": "/entity-{slug}-{uuid}.json",
+        "type": "json",
+        "dataFields": [
+          {
+            "fieldName": "title",
+            "jsonPath": "title"
+          }
+        ]
+      },
+      {
+        "id": "productPage",
+        "name": "product",
+        "path": "/product-{slug}.html",
+        "type": "html",
+        "dataFields": [
+          {
+            "fieldName": "dataId",
+            "cssSelector": "div[data-id]",
+            "attribute": "data-id"
+          }
+        ]
+      }
+    ]
+  }
+  
